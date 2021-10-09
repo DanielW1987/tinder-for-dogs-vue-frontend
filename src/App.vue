@@ -1,9 +1,18 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link>
-  </div>
-  <router-view/>
+  <tinder-navbar></tinder-navbar>
+  <main role="main" class="content-wrapper mt-3">
+    <div class="container">
+      <router-view/>
+    </div>
+  </main>
 </template>
 
-<style>
-</style>
+<script>
+import TinderNavbar from '@/components/TinderNavbar.vue';
+
+export default {
+  components: {
+    TinderNavbar,
+  },
+};
+</script>
