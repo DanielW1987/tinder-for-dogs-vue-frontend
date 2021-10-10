@@ -1,5 +1,5 @@
 <template>
-  <tinder-navbar></tinder-navbar>
+  <navbar></navbar>
   <main role="main" class="content-wrapper mt-3">
     <div class="container">
       <router-view/>
@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import TinderNavbar from '@/components/TinderNavbar.vue';
+import Navbar from '@/components/Navbar.vue';
 
 export default {
   components: {
-    TinderNavbar,
+    Navbar,
   },
 };
 </script>

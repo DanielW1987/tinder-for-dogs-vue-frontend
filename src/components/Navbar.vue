@@ -26,7 +26,7 @@
               <router-link class="nav-link" to="/">Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/tinder">Tinder</router-link>
+              <router-link class="nav-link" to="/like-or-dislike">Like or Dislike</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/gallery">Gallery</router-link>
@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  name: 'TinderNavbar',
+  name: 'Navbar',
 };
 </script>
 
