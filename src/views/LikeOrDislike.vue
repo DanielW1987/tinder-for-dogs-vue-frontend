@@ -2,20 +2,20 @@
   <h1>Like or Dislike</h1>
   <div class="row">
     <img
-      src="https://www.deine-tierwelt.de/services/wp-content/uploads/sites/3/2020/06/rufus-laborbeagle-auf-sofa.jpg"
+      :src="imageUrl"
       class="rounded mx-auto d-block dog-photo"
       alt="Dog photo"
     >
   </div>
   <div class="row">
-    <h2 class="text-center">Rufus</h2>
+    <h2 class="text-center">{{ dogName }}</h2>
   </div>
   <div class="row">
     <div class="col-6 text-end">
-      <button type="button" class="btn btn-danger .btn-lg">Dislike</button>
+      <button type="button" class="btn btn-danger .btn-lg" @click="dislike">Dislike</button>
     </div>
     <div class="col-6">
-      <button type="button" class="btn btn-success .btn-lg">Like</button>
+      <button type="button" class="btn btn-success .btn-lg" @click="like">Like</button>
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     loadRandomDog() {
-      fetch('/dogs')
+      fetch('/api/v1/dogs')
         .then((response) => {
           if (response.ok) {
             return response.json();
@@ -45,7 +45,7 @@ export default {
         });
     },
     like() {
-      fetch('/dogs/likes', {
+      fetch('api/v1/dogs/likes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ export default {
         });
     },
     dislike() {
-      fetch('/dogs/dislikes', {
+      fetch('api/v1/dogs/dislikes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
